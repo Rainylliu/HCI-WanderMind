@@ -1,0 +1,179 @@
+/* 通用样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Sidebar 样式 */
+.sidebar {
+    width: 20%;
+    background-color: #f0f6ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100vh;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+nav ul li a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+nav ul li.active a {
+    color: #3578e5;
+}
+
+.settings {
+    margin-top: auto;
+    text-align: center;
+}
+
+.settings ul {
+    list-style: none;
+    padding: 0;
+}
+
+.settings ul li {
+    margin-bottom: 20px;
+}
+
+.settings ul li a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.settings ul li a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.user-profile {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.user-profile img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.user-profile p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Main content 样式 */
+.main-content {
+    width: 80%;
+    padding: 40px;
+    background-color: #eaf6ff;
+    overflow-y: auto;
+    position: relative;
+}
+
+.custom-plan h1 {
+    font-size: 28px;
+    color: #3578e5;
+    margin-bottom: 20px;
+}
+
+#travel-plan {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Refresh Button 样式 */
+.refresh-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.refresh-button button {
+    background-color: #3578e5;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.refresh-button button:hover {
+    background-color: #285bb5;
+}
+
+/* Illustration Image 样式 */
+.illustration {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.illustration img {
+    width: 150px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Customized Travel Plan is All Set!</title>
+    <link rel="stylesheet" href="./css/result.css"> <!-- 引入 result.css -->
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar 从 questions 页面复制 -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="./img/logo.svg" alt="WanderMind Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./dashboard.html"><img src="./img/dashboard-icon.png" alt="Dashboard Icon"> Dashboard</a></li>
+                    <li><a href="./journey-list.html"><img src="./img/journey-icon.png" alt="Journey List Icon"> Journey List</a></li>
+                    <li class="active"><a href="./ai-travel-guide.html"><img src="./img/travel-icon.png" alt="AI Travel Guide Icon"> AI-Travel Guide</a></li>
+                </ul>
+            </nav>
+            <div class="settings">
+                <ul>
+                    <li><a href="#"><img src="./img/settings-icon.png" alt="Settings Icon"> Settings</a></li>
+                    <li><a href="#"><img src="./img/logout-icon.png" alt="Logout Icon"> Logout</a></li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <img src="./img/profile-pic.png" alt="User Avatar">
+                <p>Charlie<br>charlie@mail.com</p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="custom-plan">
+                <h1>Your Customized Travel Plan is All Set!</h1>
+                <div id="travel-plan"></div>
+            </div>
+
+            <!-- Illustration Image 在右下角 -->
+            <div class="illustration">
+                <img src="./img/checklist.png" alt="Checklist Illustration">
+            </div>
+        </div>
+
+        <!-- Refresh Button 在右上角 -->
+        <div class="refresh-button">
+            <button onclick="location.reload()">Refresh</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const travelPlanOutput = document.getElementById('travel-plan');
+            const travelResponse = localStorage.getItem('travelResponse');
+
+            if (travelResponse) {
+                try {
+                    const parsedResponse = JSON.parse(travelResponse);
+                    const message = parsedResponse.choices[0].message.content;
+                    travelPlanOutput.textContent = message;
+                } catch (error) {
+                    console.error('Error parsing travel plan:', error);
+                    travelPlanOutput.textContent = 'Error displaying the travel plan. Please try again.。';
+                }
+            } else {
+                travelPlanOutput.textContent = 'No travel plan found. Please complete the questionnaire first.';
+            }
+        });
+    </script>
+</body>
+</html>
